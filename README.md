@@ -11,10 +11,13 @@ parse and understand
 
 ## Roadmap
 
-- easy to find word occurance counts...
+- easy to find word occurrence counts...
   - ex: word: 2
 - how to get words in their "natural habitat"?
   - ex: one phrase here
+  - one word "groups"
+  - two word groups
+  - multiple word groups
 - how to isolate patterns?
   - ex: one phrase -> number noun
 - how to model pattern data in datastore?
