@@ -9,6 +9,17 @@ parse and understand
 - run calculations
 - store data results
 
+## Roadmap
+
+- easy to find word occurance counts...
+  - ex: word: 2
+- how to get words in their "natural habitat"?
+  - ex: one phrase here
+- how to isolate patterns?
+  - ex: one phrase -> number noun
+- how to model pattern data in datastore?
+  - ex: number followed by noun
+  
 ## Notes
 
 - test data is from:
