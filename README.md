@@ -18,9 +18,14 @@ parse and understand
   - one word "groups"
   - two word groups
   - multiple word groups
+  - what to do with found word groups?
+    - what do found word groups tell us?
+      1. what words go before other words
+      2. what words go after other words
 - how to isolate patterns?
   - ex: one phrase -> number noun
   - how would we know what patterns mean?
+  - isolating subject, object, verb (without having previously-learned knowledge to which each POS relates)
   - note: verb/adjective conjugations can possibly be treated as individual words for now...
 - how to model pattern data in datastore?
   - ex: number followed by noun
