@@ -20,9 +20,13 @@ parse and understand
   - multiple word groups
 - how to isolate patterns?
   - ex: one phrase -> number noun
+  - how would we know what patterns mean?
+  - note: verb/adjective conjugations can possibly be treated as individual words for now...
 - how to model pattern data in datastore?
   - ex: number followed by noun
-  
+  - how best to retrieve data?
+    - pattern search?
+    
 ## Notes
 
 - test data is from:
