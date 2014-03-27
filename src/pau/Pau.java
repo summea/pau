@@ -67,12 +67,25 @@ public class Pau {
         out.println(result);
     }
     
+    public static HashMap<String, Integer> filterResults(HashMap<String, Integer> map, int lowerLimit) {
+        
+        HashMap<String, Integer> result = new HashMap<String, Integer>();
+        
+        for (Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() >= lowerLimit) {
+                result.put(entry.getKey(), entry.getValue());
+            }
+        }
+        
+        return result;
+    }
+    
     /* 
      * Find number of occurrences for individual tokens.
      * @param path Path for input data file.
      * @return String of found results.
      */
-    public static HashMap<?, ?> findOccurrences(Path path) {
+    public static HashMap<String, Integer> findOccurrences(Path path) {
         try {
             HashMap<String, Integer> foundWords = new HashMap<String, Integer>();
             
@@ -138,18 +151,17 @@ public class Pau {
     
     public static void main(String[] args) throws UnsupportedEncodingException {
         
-        HashMap<String, HashMap<String, ?>> learnedPOS = new HashMap<String, HashMap<String, ?>>();
+        HashMap<String, HashMap<String, Double>> learnedPOS = new HashMap<String, HashMap<String, Double>>();
         
         PrintStream out = new PrintStream(System.out, true, "UTF-8");
-        String[] fileNames = { "src/data/data-en.txt", "src/data/data-en2.txt" };
-        
-        out.println("en data:\n");
+        //String[] fileNames = { "src/data/data-en.txt", "src/data/data-en2.txt" };
+        String[] fileNames = { "src/data/data-vi.txt", "src/data/data-vi2.txt", "src/data/data-vi3.txt" };
         
         for (String fileName : fileNames) {
             Path path = FileSystems.getDefault().getPath(fileName);
             
             // find word occurrences
-            HashMap<?, ?> singleOccurences = findOccurrences(path);
+            HashMap<String, Integer> singleOccurences = findOccurrences(path);
             out.println("find single word occurances:");
             printHashMap(singleOccurences, out, "all");
             
@@ -157,9 +169,29 @@ public class Pau {
             out.println("\npossible common POS and/or subjects:");
             printHashMap(singleOccurences, out, "keys", 3);
             
-            // TODO: check if possible POS already exists in learnedPOS
-            // TODO: if exists, update existing weight +0.1
-            // TODO: if !exists, add possible POS to learnedPOS with new weight of 0.1
+            HashMap<String, Integer> filteredOccurenceResults = new HashMap<String, Integer>();
+            filteredOccurenceResults = filterResults(singleOccurences, 3);
+            
+            // loop through filtered results for weight setting/updating
+            // weights indicate if POS is a possible common POS (e.g. in, on, at...)
+            // TODO: capture neighboring words for these common POS candidates
+            //       so that we can possibly determine what type of POS neighboring words might be
+            for (Entry<String, Integer> entry : filteredOccurenceResults.entrySet()) {
+                HashMap<String, Double> updatedValue = new HashMap<String, Double>();
+                
+                // check if possible common POS already exists in learnedPOS
+                // if exists, update existing weight +0.1                
+                if (learnedPOS.containsKey(entry.getKey())) {
+                    updatedValue = learnedPOS.get(entry.getKey());
+                    updatedValue.put("weight", (Double) updatedValue.get("weight") + 0.1);
+                }
+                // if !exists, add possible common POS to learnedPOS with new weight of 0.1
+                else {
+                    updatedValue.put("weight", 0.1);
+                }
+                learnedPOS.put(entry.getKey(), updatedValue);
+                out.println("adding value... key:" + entry.getKey() + " weight:" + updatedValue);
+            }
             
             // find word occurrence neighbors
             HashMap<?, ?> neighborOccurences = findNeighbors(path);
