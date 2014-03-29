@@ -162,8 +162,8 @@ public class Pau {
             
             // find word occurrences
             HashMap<String, Integer> singleOccurences = findOccurrences(path);
-            out.println("find single word occurances:");
-            printHashMap(singleOccurences, out, "all");
+            //out.println("find single word occurances:");
+            //printHashMap(singleOccurences, out, "all");
             
             // possible common POS and/or subjects
             out.println("\npossible common POS and/or subjects:");
@@ -196,11 +196,11 @@ public class Pau {
             // find word occurrence neighbors
             HashMap<?, ?> neighborOccurences = findNeighbors(path);
             out.println("\nfind neighbor word occurances:");
-            printHashMap(neighborOccurences, out, "all", 2);
+            printHashMap(neighborOccurences, out, "all", 3);
             
             // possible data topics
             out.println("\npossible data topics:");
-            printHashMap(neighborOccurences, out, "keys", 2);
+            printHashMap(neighborOccurences, out, "keys", 3);
         }
     }
 }
