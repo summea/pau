@@ -47,10 +47,12 @@ _?data mining through is possible it to language a learn_
   - how best to retrieve data?
     - pattern search?
 - meaning from abstract words?
-  - is there a way to find meaning of words without being given a plain definition?
+  - is there a way to find _meaning_ of words without being given a plain definition?
     - using context? (neighboring words)
+      - context can indicate how words are used... but how can words be used to indicate meaning?
+    - machine could make a guess at meaning and update meaning over time as more information is learned
+      - but what is _guess_ based on?
     
-
 ## Example Output
 
     en data:
