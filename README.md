@@ -52,7 +52,16 @@ _?data mining through is possible it to language a learn_
       - context can indicate how words are used... but how can words be used to indicate meaning?
     - machine could make a guess at meaning and update meaning over time as more information is learned
       - but what is _guess_ based on?
-    
+      
+- generating meaning:
+  1. parse and assign words to dictionary
+  2. add previous, current, and next words for each dictionary-assigned word into a list of rules
+    ex: this and that _previous_, _current_, and _next_
+  3. repeat process until all words are assigned to dictionary
+  4. run through rules list and try to find patterns that can be condensed/abstracted
+  5. update rules list with condensed/updated data ("definitions")
+  6. add found "definitions" to words in dictionary
+
 ## Example Output
 
     en data:
