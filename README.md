@@ -53,10 +53,10 @@ _?data mining through is possible it to language a learn_
     - machine could make a guess at meaning and update meaning over time as more information is learned
       - but what is _guess_ based on?
       
-- generating meaning:
+Generating Meaning: Algorithm A
   1. parse and assign words to dictionary
   2. add previous, current, and next words for each dictionary-assigned word into a list of rules
-    ex: this and that _previous_, _current_, and _next_
+    - ex: this and that _previous_, _current_, and _next_
   3. repeat process until all words are assigned to dictionary
   4. run through rules list and try to find patterns that can be condensed/abstracted
   5. update rules list with condensed/updated data ("definitions")
@@ -192,7 +192,169 @@ _?data mining through is possible it to language a learn_
 
     possible data topics:
     of the
+    
+## Example Output (GMA:A)
+    
+    dictionary:
 
+    Austroasiatic : 
+    Vietnamese : 
+    Kinh : 
+    second : 
+    for : 
+    by : 
+    spoken : 
+    used : 
+    people : 
+    has : 
+    elsewhere : 
+    languages : 
+    of : 
+    given : 
+    formerly : 
+    family : 
+    diacritics : 
+    three : 
+    official : 
+    million : 
+    nôm : 
+    or : 
+    national : 
+    far : 
+    residing : 
+    modified : 
+    and : 
+    many : 
+    that : 
+    Latin : 
+    native : 
+    called : 
+    several : 
+    alphabet : 
+    minorities : 
+    language : 
+    letters : 
+    Việt : 
+    characters : 
+    ﻿Vietnamese : 
+    other : 
+    set : 
+    about : 
+    today : 
+    use : 
+    most : 
+    quốc : 
+    from : 
+    Chinese : 
+    It : 
+    Vietnam : 
+    The : 
+    pronunciation : 
+    times : 
+    borrowings : 
+    tones : 
+    ngữ : 
+    with : 
+    ethnic : 
+    is : 
+    it : 
+    vocabulary : 
+    a : 
+    as : 
+    the : 
+    speakers : 
+    in : 
+    combined : 
+    which : 
+    additional : 
+    tiếng : 
+    vernacular : 
+    certain : 
+    part : 
+    first : 
+    also : 
+    chữ : 
+
+    rules:
+
+    Austroasiatic : [the, language, other, languages]
+    Vietnamese : [combined, vocabulary, The, alphabet]
+    Kinh : [people, and]
+    second : [or, language]
+    for : [diacritics, tones]
+    by : [has, far]
+    spoken : [is, as]
+    used : [formerly, a]
+    people : [Vietnamese, Kinh]
+    has : [it, by, vocabulary, borrowings]
+    elsewhere : [residing, It]
+    languages : [Austroasiatic, combined]
+    of : [part, the, family, which, that, the, set, Chinese]
+    given : [nôm, vernacular]
+    formerly : [it, used]
+    family : [language, of]
+    diacritics : [additional, for]
+    three : [about, million]
+    official : [national, language]
+    million : [three, Vietnamese]
+    nôm : [chữ, given]
+    or : [first, second]
+    national : [the, official]
+    far : [by, the]
+    residing : [Vietnamese, elsewhere]
+    modified : [a, set]
+    and : [Chinese, it, tones, certain]
+    many : [by, ethnic]
+    that : [times, of]
+    Latin : [a, alphabet]
+    native : [the, language]
+    called : [characters, chữ]
+    several : [speakers, times]
+    alphabet : [Vietnamese, quốc, Latin, with]
+    minorities : [ethnic, of]
+    language : [Austroasiatic, family]
+    Việt : [tiếng, is]
+    characters : [Chinese, called]
+    ﻿Vietnamese : [, tiếng]
+    other : [the, Austroasiatic]
+    set : [modified, of]
+    about : [of, three]
+    today : [use, is]
+    use : [in, today]
+    most : [the, speakers]
+    quốc : [alphabet, ngữ]
+    from : [borrowings, Chinese]
+    Chinese : [from, and, of, characters]
+    It : [, is]
+    Vietnam : [of, It]
+    The : [pronunciation, Vietnamese]
+    pronunciation : [vernacular, The]
+    times : [several, that]
+    borrowings : [has, from]
+    tones : [for, and]
+    ngữ : [quốc, in]
+    with : [alphabet, additional]
+    ethnic : [many, minorities]
+    is : [It, part, today, a]
+    it : [which, has, and, formerly]
+    vocabulary : [Vietnamese, has]
+    a : [used, modified, is, Latin]
+    as : [spoken, a]
+    the : [of, Austroasiatic, far, most, of, other]
+    speakers : [most, several]
+    in : [ngữ, use]
+    combined : [languages, Vietnamese]
+    which : [of, it]
+    additional : [with, diacritics]
+    tiếng : [﻿Vietnamese, Việt]
+    vernacular : [given, pronunciation]
+    certain : [and, letters]
+    part : [is, of]
+    first : [a, or]
+    also : [It, is]
+    chữ : [called, nôm]
+
+    
 ## Notes
 
 - test data is from:
