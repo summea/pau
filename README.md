@@ -59,6 +59,9 @@ Generating Meaning: Algorithm A
     - ex: this and that _previous_, _current_, and _next_
   3. repeat process until all words are assigned to dictionary
   4. run through rules list and try to find patterns that can be condensed/abstracted
+    - stuck on this step:
+      - what rules can we find given the data?
+        - so far, we can see places where there are similar surrounding (prev/next) words in the captured lists... but even with this data, we can really only see how often certain patterns are used, right? this is great for pattern statistics... but seems to lead to another road block for uncovering meaning...
   5. update rules list with condensed/updated data ("definitions")
   6. add found "definitions" to words in dictionary
 

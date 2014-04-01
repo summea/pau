@@ -317,8 +317,10 @@ public class Pau {
         out.println("rules:\n");
         printHashMap(rules, out, "all");
         
-        // (GMA:A) 4. run through rules list and try to find patterns that can be condensed/abstracted
-        // (GMA:A) 5. update rules list with condensed/updated data ("definitions")
-        // (GMA:A) 6. add found "definitions" to words in dictionary
+        // TODO: (GMA:A) 4. run through rules list and try to find patterns that can be condensed/abstracted
+        // for now... this just means... search through other rule sets and look for similar words?
+        
+        // TODO: (GMA:A) 5. update rules list with condensed/updated data ("definitions")
+        // TODO: (GMA:A) 6. add found "definitions" to words in dictionary
     }
 }
