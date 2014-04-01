@@ -3,8 +3,6 @@ pau
 
 parse and understand
 
-_?data mining through is possible it to language a learn_
-
 ## Example Output
 
     en data:
