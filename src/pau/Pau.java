@@ -189,17 +189,16 @@ public class Pau {
      * @param path Path for input data.
      * @return Hash map of results.
      */
-    public static HashMap<String, List<String>> addToRules(Path path) {
+    public static HashMap<String, List<String>> addToRules(Path path, HashMap<String, List<String>> foundWords) {
+        // TODO: clean up the parameters for this function
         try {
-            HashMap<String, List<String>> foundWords = new HashMap<String, List<String>>();
-            
             // read in data file
             List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
 
             // read through each line from data file
             for (String line : lines) {
                 String[] items = line.split(" ");
-                for (int i = 0; i < items.length-1; i++) {
+                for (int i = 0; i < items.length; i++) {
                     String prev = "";
                     String curr = "";
                     String next = "";
@@ -209,10 +208,11 @@ public class Pau {
                     
                     curr = items[i];
                     
-                    if (items[i+1] != null)
+                    if ((i+1) < items.length)
                         next = items[i+1];
                     
                     //System.out.println("prev: " + prev + " curr: " + curr + " next: " + next);
+                    
                     // check if prev/next list items already exist
                     // if exist, append new prev/next items
                     if (foundWords.get(clean(curr)) != null) {
@@ -242,10 +242,10 @@ public class Pau {
     
     public static void main(String[] args) throws UnsupportedEncodingException {
         
-        HashMap<String, HashMap<String, Double>> learnedPOS = new HashMap<String, HashMap<String, Double>>();
+        HashMap<String, List<String>> foundWords = new HashMap<String, List<String>>();
         
         PrintStream out = new PrintStream(System.out, true, "UTF-8");
-        String[] fileNames = { "src/data/data-en.txt", "src/data/data-en2.txt" };
+        String[] fileNames = { "src/data/simple-data-en.txt", "src/data/simple-data-en2.txt" };
         //String[] fileNames = { "src/data/data-vi.txt", "src/data/data-vi2.txt", "src/data/data-vi3.txt" };
         
         HashMap<String, String> dictionary = new HashMap<String, String>();
@@ -305,7 +305,7 @@ public class Pau {
             
             // (GMA:A) 2. add previous, current, and next words for each dictionary-assigned word into a list of rules
             //   - ex: this and that _previous_, _current_, and _next_
-            HashMap<String, List<String>> ruleAdditions = addToRules(path);
+            HashMap<String, List<String>> ruleAdditions = addToRules(path, foundWords);
             rules.putAll(ruleAdditions);
             
             // (GMA:A) 3. repeat process until all words are assigned to dictionary
